@@ -38,8 +38,8 @@ local function AssignHitboxes(player)
 
     local hitbox_connection;
     hitbox_connection = game:GetService("RunService").RenderStepped:Connect(function()
+        local char = CHAR_PARENT:FindFirstChild(player.Name)
         if getgenv().HBE then
-            local char = CHAR_PARENT:FindFirstChild(player.Name)
             if char and char:FindFirstChild("HumanoidRootPart") and (char.HumanoidRootPart.Size ∼= HITBOX_SIZE or char.HumanoidRootPart.Color ∼= HITBOX_COLOUR) then
                 char.HumanoidRootPart.Size = HITBOX_SIZE
                 char.HumanoidRootPart.Color = HITBOX_COLOUR
